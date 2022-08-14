@@ -1,5 +1,5 @@
-const input = document.querySelector('.login_input');
-const button = document.querySelector('.login_button');
+const input = document.querySelector('.login__input');
+const button = document.querySelector('.login__button');
 const form = document.querySelector('.login-form');
 
 const validateInput = ({target}) => {
@@ -12,11 +12,13 @@ const validateInput = ({target}) => {
 }
 
 const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
+
+    console.log('Logando');
 
     localStorage.setItem('player', input.value);
     window.location = 'pages/game.html';
 }
 
 input.addEventListener('input', validateInput);
-input.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', handleSubmit);
